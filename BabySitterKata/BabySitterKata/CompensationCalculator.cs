@@ -22,6 +22,15 @@ namespace BabySitterKata
             {
                 throw new Exception("start and end cannot be equal");
             }
+
+            if (start < 5 && end > 4)
+            {
+                throw new Exception("Cannot have end before start");
+            }
+            if ( start > end  && end > 4)
+            {
+                throw new Exception("Cannot have end before start");
+            }
             decimal compensation = 0.0m;
             //need to set bounds for the times
             //start >= 5 or < 4

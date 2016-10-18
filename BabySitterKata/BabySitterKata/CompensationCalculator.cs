@@ -27,7 +27,7 @@ namespace BabySitterKata
             {
                 throw new Exception("Cannot have end before start");
             }
-            if ( start > end  && end > 4)
+            if ( start > end  && (end > 4 || start < 5))
             {
                 throw new Exception("Cannot have end before start");
             }

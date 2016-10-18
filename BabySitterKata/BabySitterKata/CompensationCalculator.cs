@@ -17,6 +17,11 @@ namespace BabySitterKata
 
         public decimal calc(int start, int end)
         {
+
+            if (end == start)
+            {
+                throw new Exception("start and end cannot be equal");
+            }
             decimal compensation = 0.0m;
             //need to set bounds for the times
             //start >= 5 or < 4

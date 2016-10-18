@@ -22,8 +22,17 @@ namespace BabySitterKata
             //start >= 5 or < 4
             //from bedtime to midnight rate is 8/hr
             
+            //startafter or at midnight
+            if (start == 12)
+            {
+                compensation = end * 16;
+            }
+            else if (start < 4)
+            {
+                compensation = (end - start) * 16;
+            }
             //start after bedtime
-            if (start >= bedtime)
+           else if (start >= bedtime)
             {
                 if (end < start)
                 {

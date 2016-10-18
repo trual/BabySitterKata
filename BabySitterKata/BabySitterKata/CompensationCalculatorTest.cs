@@ -65,5 +65,15 @@ namespace BabySitterKata
             end = 12;
             Assert.AreEqual(16m, Compensation.calc(start, end));
         }
+        [TestMethod()]
+        public void WhenBabySitterStartsAfterMidnight()
+        {
+            start = 12;
+            end = 4;
+            Assert.AreEqual(64m, Compensation.calc(start, end));
+            start = 1;
+            end = 3;
+            Assert.AreEqual(32m, Compensation.calc(start, end));
+        }
     }
 }

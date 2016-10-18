@@ -17,7 +17,20 @@ namespace BabySitterKata
 
         public decimal calc(int start, int end)
         {
-            decimal compensation = (end - start) * 12;
+            decimal compensation = 0.0m;
+            //need to set bounds for the times
+            //start >= 5 or < 4
+            //from bedtime to midnight rate is 8/hr
+            if (end > bedtime && start < bedtime)
+            {
+                compensation = (bedtime - start) * 12;
+                compensation += (end - bedtime) * 8;
+            }
+            else
+            {
+                compensation = (end - start) * 12;
+            }
+            
             return compensation;
         }
     }

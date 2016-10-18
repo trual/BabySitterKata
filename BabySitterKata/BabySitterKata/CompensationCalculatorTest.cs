@@ -33,5 +33,16 @@ namespace BabySitterKata
             // go to bed
             Assert.AreEqual(48m, Compensation.calc(start, end));
         }
+        [TestMethod()]
+        public void WhenBabySitterStayTillMidnight()
+        {
+            CompensationCalculator Compensation = new CompensationCalculator();
+            int start = 5;
+            int end = 12;
+            //making bedtime 9 pm because that's a reasonable time a child should
+            // go to bed
+            Assert.AreEqual(72m, Compensation.calc(start, end));
+
+        }
     }
 }

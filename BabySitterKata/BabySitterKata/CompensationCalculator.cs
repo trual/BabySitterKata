@@ -7,14 +7,18 @@ using System.Threading.Tasks;
 namespace BabySitterKata
 {
     public class CompensationCalculator
-    {
+    {   
+        //this is a reasonable bedtime
+        int bedtime = 9;
+
         public CompensationCalculator()
         {
         }
 
         public decimal calc(int start, int end)
         {
-            return 0.0m;
+            decimal compensation = (end - start) * 12;
+            return compensation;
         }
     }
 }

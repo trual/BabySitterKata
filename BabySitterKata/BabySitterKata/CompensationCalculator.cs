@@ -21,7 +21,13 @@ namespace BabySitterKata
             //need to set bounds for the times
             //start >= 5 or < 4
             //from bedtime to midnight rate is 8/hr
-            if (end > bedtime && start < bedtime)
+            if (end < start && start < bedtime)
+            {
+                compensation = (bedtime - start) * 12;
+                compensation += (12 - bedtime) * 8;
+                compensation += end * 16;
+            }
+            else if (end > bedtime && start < bedtime)
             {
                 compensation = (bedtime - start) * 12;
                 compensation += (end - bedtime) * 8;
